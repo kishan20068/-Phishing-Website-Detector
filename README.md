@@ -1,4 +1,4 @@
-🔐 AI-Based Phishing Website Detector
+🔐 Phishing Website Detector
 A machine learning-powered project that detects phishing websites based on URL analysis and website features. This tool helps users identify malicious or unsafe websites and prevent phishing attacks before they happen.
 
 🚀 Features
