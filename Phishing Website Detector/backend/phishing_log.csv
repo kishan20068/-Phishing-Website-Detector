@@ -1,0 +1,12 @@
+timestamp,url,confidence,explanation
+2025-07-24T23:07:36.485991,http://paypal-login-verification.com,1.000,"Suspicious keyword in URL, No HTTPS"
+2025-07-24T23:10:38.573198,http://paypal-login-verification.com,0.960,"Suspicious keyword in URL, No HTTPS"
+2025-07-24T23:13:32.354179,http://secure-login.com,0.980,"Suspicious keyword in URL, No HTTPS"
+2025-07-24T23:17:52.191035,http://secure-login.com,0.980,"Suspicious keyword in URL, No HTTPS"
+2025-07-24T23:23:17.117141,http://secure-login.com,0.980,"Suspicious keyword in URL, No HTTPS"
+2025-07-24T23:23:26.932160,http://secure-login.com,0.980,"Suspicious keyword in URL, No HTTPS"
+2025-07-24T23:27:46.331361,http://paypal-login-verification.com,1.000,"Suspicious keyword in URL, No HTTPS"
+2025-07-24T23:36:20.369592,http://secure-login.com,0.980,"Suspicious keyword in URL, No HTTPS"
+2025-07-25T21:45:30.195320,http://paypal-login-verification.com,1.000,"Suspicious keyword in URL, No HTTPS"
+2025-07-25T21:56:43.583863,http://login@phishingsite.com,0.950,"URL contains @ symbol, Suspicious keyword in URL, No HTTPS"
+2025-07-25T22:09:19.038603,http://secure-login.com,0.980,"Suspicious keyword in URL, No HTTPS"

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detection History</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .history-page { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px #b0c4de55; padding: 2em; }
+        .history-page h1 { color: #ff1744; margin-bottom: 1em; }
+        .history-table { width: 100%; border-collapse: collapse; margin-top: 1.5em; }
+        .history-table th, .history-table td { border: 1px solid #e0eafc; padding: 0.5em 0.7em; text-align: left; }
+        .history-table th { background: #181818; color: #ff1744; font-weight: 700; }
+        .history-table td { color: #333; background: #f3f6fa; }
+        a { color: #ff1744; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .scrollable-table { max-height: 70vh; overflow-y: auto; display: block; }
+    </style>
+</head>
+<body>
+    <div class="history-page">
+        <h1>Phishing Detection History</h1>
+        <div class="scrollable-table">
+        <table class="history-table">
+            <tr><th>Time</th><th>URL</th><th>Confidence</th><th>Reason</th></tr>
+            {% for row in history %}
+            <tr>
+                <td>{{ row.timestamp }}</td>
+                <td><a href="{{ row.url }}" target="_blank">{{ row.url }}</a></td>
+                <td>{{ row.confidence }}</td>
+                <td>{{ row.explanation }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
+        <br>
+        <a href="/">&larr; Back to Detector</a>
+    </div>
+</body>
+</html> 

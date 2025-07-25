@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Detector Analytics</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .dashboard { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px #b0c4de55; padding: 2em; }
+        .dashboard h1 { color: #007bff; margin-bottom: 1em; }
+        .stat { font-size: 1.2em; margin: 1em 0; }
+        .phishing { color: #d90429; }
+        .legit { color: #2b9348; }
+        .recent-table { width: 100%; border-collapse: collapse; margin-top: 1.5em; }
+        .recent-table th, .recent-table td { border: 1px solid #e0eafc; padding: 0.5em 0.7em; text-align: left; }
+        .recent-table th { background: #e0eafc; color: #007bff; font-weight: 700; }
+        .recent-table td { color: #333; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Phishing Detector Analytics</h1>
+        <div class="stat">Total Checks: <b>{{ total_checks }}</b></div>
+        <div class="stat legit">Legitimate: <b>{{ legit_count }}</b></div>
+        <div class="stat phishing">Phishing: <b>{{ phishing_count }}</b></div>
+        <h2>Recent Phishing Detections</h2>
+        <table class="recent-table">
+            <tr><th>Time</th><th>URL</th><th>Confidence</th><th>Reason</th></tr>
+            {% for row in recent_phishing %}
+            <tr>
+                <td>{{ row.timestamp }}</td>
+                <td><a href="{{ row.url }}" target="_blank">{{ row.url }}</a></td>
+                <td>{{ row.confidence }}</td>
+                <td>{{ row.explanation }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <a href="/">← Back to Detector</a>
+    </div>
+</body>
+</html> 

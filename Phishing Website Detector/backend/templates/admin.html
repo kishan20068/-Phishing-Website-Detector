@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Retrain Model</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .admin-panel { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 18px; box-shadow: 0 8px 32px #b0c4de55; padding: 2em; }
+        h1 { color: #007bff; margin-bottom: 1em; }
+        .status { margin: 1em 0; font-weight: bold; }
+        .error { color: #d90429; }
+        .success { color: #2b9348; }
+        label { display: block; margin: 1em 0 0.5em 0; }
+        input[type='password'], input[type='file'] { width: 100%; margin-bottom: 1em; }
+        button { margin-top: 1em; }
+    </style>
+</head>
+<body>
+    <div class="admin-panel">
+        <h1>Admin: Retrain Model</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <label for="dataset">Upload new CSV dataset:</label>
+            <input type="file" name="dataset" id="dataset" accept=".csv" required>
+            <button type="submit">Upload & Retrain</button>
+        </form>
+        {% if status %}
+            <div class="status {{ 'success' if success else 'error' }}">{{ status }}</div>
+        {% endif %}
+        <a href="/">← Back to Detector</a>
+    </div>
+</body>
+</html> 

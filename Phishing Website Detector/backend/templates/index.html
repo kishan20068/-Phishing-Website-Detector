@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Website Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <div class="container">
+        <h1>Phishing Website Detector</h1>
+        <select id="exampleDropdown" onchange="setExampleUrl()" aria-label="Test example URLs">
+            <option value="">-- Try a test example --</option>
+            <option value="https://www.google.com">Google (Legitimate)</option>
+            <option value="https://www.amazon.com">Amazon (Legitimate)</option>
+            <option value="http://secure-login.com">secure-login.com (Phishing)</option>
+            <option value="http://paypal-login-verification.com">paypal-login-verification.com (Phishing)</option>
+            <option value="http://login@phishingsite.com">login@phishingsite.com (Phishing)</option>
+            <option value="http://bankofamerica.secure-login.com">bankofamerica.secure-login.com (Phishing)</option>
+        </select>
+        <div class="input-vertical">
+            <input type="text" id="urlInput" placeholder="Enter website URL" aria-label="Enter website URL">
+            <button onclick="checkPhishing()">Check</button>
+        </div>
+        <a href="/history_page" target="_blank" class="history-btn">Show History</a>
+        <div id="result" class="result-area"></div>
+        <div id="tip" class="tip"></div>
+    </div>
+    <script src="/static/script.js"></script>
+    <script src="/static/matrix.js"></script>
+</body>
+</html> 
